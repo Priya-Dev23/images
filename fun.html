@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary ❤️</title>
+<style>
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ff99b9, #ffe6ec);
+  margin: 0;
+  padding: 20px;
+  color: #b0004d;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Container */
+.container {
+  max-width: 650px;
+  background: rgba(255,255,255,0.95);
+  padding: 25px;
+  margin: auto;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(255,0,90,0.25);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 1.5s ease-in-out;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Text & Emoji */
+h1 {
+  font-size: 32px;
+  color: #e8006f;
+  text-shadow: 0 3px 6px rgba(255,0,102,0.3);
+  margin: 0 auto 15px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.emoji { font-size:40px; animation: pulse 1.8s infinite; margin:10px 0; }
+@keyframes pulse {0%,100%{transform:scale(1);}50%{transform:scale(1.2);}}
+.quote { margin:18px 0; font-size:18px; color:#5e0040; line-height:1.6; }
+.memory-title { margin-top:30px; font-size:28px; font-weight:bold; color:#d40062; text-shadow:0 2px 8px rgba(255,0,102,0.3);}
+.footer { margin-top:25px; font-size:16px; color:#770039; font-style:italic;}
+
+/* Images */
+.small-photo { max-height:600px; width:auto; max-width:100%; display:block; margin:20px auto; border-radius:20px; box-shadow:0 0 20px rgba(255,0,120,0.4);}
+.memory-photo { max-width:90%; height:auto; display:block; margin:20px auto; border-radius:20px; box-shadow:0 0 20px rgba(255,0,120,0.4);}
+
+/* Floating Hearts */
+.floating-heart {
+  position: fixed;
+  pointer-events:none;
+  font-size:18px;
+  color:#ff0066;
+  opacity:0.7;
+  animation: floatUp linear forwards;
+  will-change: transform, opacity;
+  z-index:0;
+}
+
+@keyframes floatUp {
+  0% { transform:translateY(0) scale(1); opacity:1; }
+  100% { transform:translateY(-120%) scale(1.8); opacity:0; }
+}
+
+/* Responsive */
+@media (max-width:500px) {
+  h1 { font-size:26px; }
+  .quote { font-size:16px; }
+  .memory-title { font-size:22px; }
+  .small-photo { max-height:150px; }
+  .memory-photo { max-height:200px; }
+  .emoji { font-size:35px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="emoji">💖 Happy Anniversary 💖</h1>
+
+  <img class="small-photo" src="https://github.com/Priya-Dev23/images/blob/main/IMG_4206.JPG?raw=true" alt="Family Photo">
+
+  <p class="quote">You and I are forever. You fill my life with love, joy, and endless happiness 💕</p>
+  <p class="quote">With you, every single day feels magical and full of love 💖✨</p>
+  <p class="quote">I fall in love with you again and again, every single day 😍💗</p>
+
+  <h2 class="memory-title">💝 Best Memories 💝</h2>
+  <img class="memory-photo" src="https://github.com/Priya-Dev23/images/blob/main/IMG_4209.JPG?raw=true" alt="Best Memory Photo">
+  <p class="quote">Some memories stay in the heart forever 💞</p>
+
+  <p class="footer">Forever yours… now and always ❤️</p>
+</div>
+
+<!-- Heart Script -->
+<script>
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'floating-heart';
+  heart.textContent = '💖';
+  heart.style.left = Math.random()*100 + 'vw';
+  heart.style.top = Math.random()*100 + 'vh';
+  heart.style.fontSize = (Math.random()*20 + 10) + 'px';
+  const duration = Math.random()*5 + 4;
+  heart.style.animationDuration = duration + 's';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), duration*1000);
+}
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
